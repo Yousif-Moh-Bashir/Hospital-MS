@@ -30,81 +30,89 @@
 										<div class="mb-5 d-flex"> <a href="{{ url('/' . $page='index') }}"><img src="{{asset('dashboard/img/brand/favicon.png')}}" class="sign-favicon ht-40" alt="logo"></a><h1 class="main-logo1 ml-1 mr-0 my-auto tx-28">Va<span>le</span>x</h1></div>
 										<div class="card-sigin">
 											<div class="main-signup-header">
-												<h2>Welcome back!</h2>
+												<h2>{{ trans('dashboard/login_trans.Welcome_back') }} !</h2>
+
+                                                @if ($errors->any())
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach ($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
 
                                                 <div class="form-group">
-                                                    <label>تحديد طريقه الدخول</label>
+                                                    <label>{{ trans('dashboard/login_trans.entry_method') }}</label>
                                                     <select id="sectionChooser" name="somename" class="form-control SlectBox SumoUnder" onclick="console.log($(this).val())" onchange="console.log('change is firing')" tabindex="-1">
                                                         <!--placeholder-->
-                                                        <option title="Volvo is a car" value="">-- اختر --</option>
-                                                        <option value="user">دخول كمريض</option>
-                                                        <option value="admin">دخول كأدمن</option>
+                                                        <option selected disabled>-- {{ trans('dashboard/login_trans.choose') }} --</option>
+                                                        <option value="user">{{ trans('dashboard/login_trans.log_patient') }}</option>
+                                                        <option value="admin">{{ trans('dashboard/login_trans.log_admin') }}</option>
                                                     </select>
                                                 </div>
 
                                                 <div class="panel" id="user">
-                                                    <h5 class="font-weight-semibold mb-4">دخول كمريض</h5>
                                                     <form action="{{ route('login.user') }}" method="POST">
                                                         @csrf
                                                         <div class="form-group">
-                                                            <label>Email</label>
+                                                            <label>{{ trans('dashboard/login_trans.Email') }}</label>
                                                             <input class="form-control" placeholder="Enter your email" type="email" name="email" autofocus>
                                                             @error('email')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Password</label>
+                                                            <label>{{ trans('dashboard/login_trans.Password') }}</label>
                                                             <input class="form-control" placeholder="Enter your password" type="password" name="password" autofocus>
                                                             @error('password')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
-                                                        </div><button class="btn btn-main-primary btn-block">Sign In</button>
+                                                        </div><button class="btn btn-main-primary btn-block">{{ trans('dashboard/login_trans.Sign_In') }}</button>
                                                         <div class="row row-xs">
                                                             <div class="col-sm-6">
-                                                                <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+                                                                <button class="btn btn-block"><i class="fa fa-facebook"></i> {{ trans('dashboard/login_trans.Facebook') }}</button>
                                                             </div>
                                                             <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                                                                <button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+                                                                <button class="btn btn-info btn-block"><i class="fa fa-twitter"></i> {{ trans('dashboard/login_trans.Twitter') }}</button>
                                                             </div>
                                                         </div>
                                                     </form>
                                                     <div class="main-signin-footer mt-5">
-                                                        <p><a href="">Forgot password?</a></p>
-                                                        <p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+                                                        <p><a href="">{{ trans('dashboard/login_trans.Forgot_password') }}</a></p>
+                                                        <p>{{ trans('dashboard/login_trans.Dont_have') }} <a href="{{ url('/' . $page='signup') }}">{{ trans('dashboard/login_trans.Create_Account') }}</a></p>
                                                     </div>
                                                 </div>
 
                                                 <div class="panel" id="admin">
-                                                    <h5 class="font-weight-semibold mb-4">دخول كادمن</h5>
                                                     <form action="{{ route('login.admin') }}" method="POST">
                                                         @csrf
                                                         <div class="form-group">
-                                                            <label>Email</label>
+                                                            <label>{{ trans('dashboard/login_trans.Email') }}</label>
                                                             <input class="form-control" placeholder="Enter your email" type="email" name="email" autofocus>
                                                             @error('email')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Password</label>
+                                                            <label>{{ trans('dashboard/login_trans.Password') }}</label>
                                                             <input class="form-control" placeholder="Enter your password" type="password" name="password" autofocus>
                                                             @error('password')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
-                                                        </div><button class="btn btn-main-primary btn-block">Sign In</button>
+                                                        </div><button class="btn btn-main-primary btn-block">{{ trans('dashboard/login_trans.Sign_In') }}</button>
                                                         <div class="row row-xs">
                                                             <div class="col-sm-6">
-                                                                <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+                                                                <button class="btn btn-block"><i class="fa fa-facebook"></i> {{ trans('dashboard/login_trans.Facebook') }}</button>
                                                             </div>
                                                             <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                                                                <button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+                                                                <button class="btn btn-info btn-block"><i class="fa fa-twitter"></i> {{ trans('dashboard/login_trans.Twitter') }}</button>
                                                             </div>
                                                         </div>
                                                     </form>
                                                     <div class="main-signin-footer mt-5">
-                                                        <p><a href="">Forgot password?</a></p>
-                                                        <p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+                                                        <p><a href="">{{ trans('dashboard/login_trans.Forgot_password') }}</a></p>
+                                                        <p>{{ trans('dashboard/login_trans.Dont_have') }} <a href="{{ url('/' . $page='signup') }}">{{ trans('dashboard/login_trans.Create_Account') }}</a></p>
                                                     </div>
                                                 </div>
 

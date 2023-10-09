@@ -31,7 +31,6 @@
     <link href="{{asset('dashboard/plugins/sidebar/sidebar.css')}}" rel="stylesheet">
     <!-- Sidemenu css -->
     <link rel="stylesheet" href="{{asset('dashboard/css/sidemenu.css')}}">
-    @yield('css')
     <!-- Maps css -->
     <link href="{{asset('dashboard/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
     <!-- style css -->
@@ -41,5 +40,16 @@
     <link href="{{asset('dashboard/css/skin-modes.css')}}" rel="stylesheet" />
 @endif
 
-{{-- @yield('css') --}}
+<!---fonts--->
+<link rel="stylesheet" href="{{ asset('dashboard/fonts/font-awesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dashboard/fonts/feather/iconfont.css') }}">
+<!---fonts--->
+<link rel="stylesheet" href="{{ asset('dashboard/fonts/Cairo/stylesheet.css') }}">
+<style>
+    body, h1, h2, h3, h4, h5, h6, .main-logo1, .fab {
+        font-family: 'Cairo';
+    }
+</style>
+
+@yield('css')
 

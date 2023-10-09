@@ -38,11 +38,14 @@ class AdminController extends Controller
      */
     public function store(LoginRequestAdmin $request)
     {
-        $request->authenticate();
+        if($request->authenticate()){
 
-        $request->session()->regenerate();
+            $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::ADMIN);
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        }
+        
+        return redirect()->back()->withErrors(['name' => (trans('dashboard/auth.failed'))]);
     }
 
     /**
