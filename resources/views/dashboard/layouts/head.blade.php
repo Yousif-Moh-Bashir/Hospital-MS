@@ -18,6 +18,7 @@
     <link href="{{asset('dashboard/css-rtl/style-dark.css')}}" rel="stylesheet">
     <!---Skinmodes css-->
     <link href="{{asset('dashboard/css-rtl/skin-modes.css')}}" rel="stylesheet">
+
 @else
     <!-- Title -->
     <title>@yield('title')</title>
@@ -46,7 +47,7 @@
 <!---fonts--->
 <link rel="stylesheet" href="{{ asset('dashboard/fonts/Cairo/stylesheet.css') }}">
 <style>
-    body, h1, h2, h3, h4, h5, h6, .main-logo1, .fab {
+    body, h1, h2, h3, h4, h5, h6, .main-logo1, .fab ,.badge {
         font-family: 'Cairo';
     }
 </style>

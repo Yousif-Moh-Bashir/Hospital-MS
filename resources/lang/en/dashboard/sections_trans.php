@@ -15,6 +15,7 @@ return [
     'Sections' => 'Sections',
     'Show' => 'Show',
     'Name' => 'Name',
+    'Describtion' => 'Describtion',
     'Date_created' => 'Date created',
     'Processes' => 'Processes',
     'Add_section' => 'Add Section',

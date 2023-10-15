@@ -18,5 +18,6 @@ return [
     'Sections' => 'Sections',
     'Show_All' => 'Show All',
     'General' => 'General',
+    'Doctors' => 'Doctors',
 
 ];

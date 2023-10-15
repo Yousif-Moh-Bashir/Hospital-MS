@@ -63,17 +63,19 @@
 									<table class="table text-md-nowrap" id="example1">
 										<thead>
 											<tr>
-												<th class="wd-15p border-bottom-0">#</th>
-												<th class="wd-15p border-bottom-0">{{ trans('dashboard/sections_trans.Name') }}</th>
-												<th class="wd-20p border-bottom-0">{{ trans('dashboard/sections_trans.Date_created') }}</th>
-												<th class="wd-25p border-bottom-0">{{ trans('dashboard/sections_trans.Processes') }}</th>
+												<th>#</th>
+												<th>{{ trans('dashboard/sections_trans.Name') }}</th>
+												<th>{{ trans('dashboard/sections_trans.Describtion') }}</th>
+												<th>{{ trans('dashboard/sections_trans.Date_created') }}</th>
+												<th>{{ trans('dashboard/sections_trans.Processes') }}</th>
 											</tr>
 										</thead>
 										<tbody>
                                             @foreach ($sections as $index=>$section )
                                             <tr>
 												<td>{{ $index + 1 }}</td>
-												<td>{{ $section->name }}</td>
+												<td><a class="btn ripple btn-outline-secondary btn-sm" href="{{ route('doctor.show',$section->id) }}">{{ $section->name }}</a></td>
+												<td>{{ \Str::limit($section->describtion, 50) }}</td>
 												<td>{{ $section->created_at->diffForHumans() }}</td>
                                                 <td>
                                                     <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$section->id}}"><i class="las la-pen"></i> {{ trans('dashboard/sections_trans.Edit') }}</a>

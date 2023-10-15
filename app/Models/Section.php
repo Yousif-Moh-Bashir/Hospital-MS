@@ -13,6 +13,14 @@ class Section extends Model
 {
     use HasFactory;
     use Translatable; // 2. To add translation methods
-    protected $fillable = ['name'];
-    public $translatedAttributes = ['name']; // 3. To define which attributes needs to be translated
-}
+    protected $fillable = ['name','describtion'];
+    public $translatedAttributes = ['name','describtion']; // 3. To define which attributes needs to be translated
+    
+    //RELACTIONS
+    public function Doctors()
+    {
+        return $this->hasMany(Doctor::class,'section_id');
+    }
+
+
+}//end of model

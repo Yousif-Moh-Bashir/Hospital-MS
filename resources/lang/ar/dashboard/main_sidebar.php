@@ -18,5 +18,6 @@ return [
     'Sections' => 'الاقسام',
     'Show_All' => 'عرض الكل',
     'General' => 'عام',
+    'Doctors' => 'الاطباء',
 
 ];

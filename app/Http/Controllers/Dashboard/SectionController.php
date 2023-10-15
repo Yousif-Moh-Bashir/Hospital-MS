@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class SectionController extends Controller
 {
-    private $Sections;
 
+    private $Sections;
     public function __construct(SectionRepositoryInterface $Sections)
     {
         return $this->Sections = $Sections;
@@ -20,7 +20,6 @@ class SectionController extends Controller
     {
         return $this->Sections->index();
     }
-
 
 
     public function store(Request $request)

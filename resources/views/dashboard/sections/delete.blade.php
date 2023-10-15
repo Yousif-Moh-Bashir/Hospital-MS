@@ -16,8 +16,8 @@
                 <h5>{{trans('dashboard/sections_trans.Warning')}}</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">{{trans('dashboard/sections_trans.Close')}}</button>
-                <button type="submit" class="btn btn-danger btn-sm">{{trans('dashboard/sections_trans.Submit')}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('dashboard/sections_trans.Close')}}</button>
+                <button type="submit" class="btn btn-danger">{{trans('dashboard/sections_trans.Submit')}}</button>
             </div>
             </form>
         </div>

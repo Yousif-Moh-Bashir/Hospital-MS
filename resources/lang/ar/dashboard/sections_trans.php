@@ -15,6 +15,7 @@ return [
     'Sections' => 'الاقسام',
     'Show' => 'عرض',
     'Name' => 'الاسم',
+    'Describtion' => 'الوصف',
     'Date_created' => 'تاريخ الانشاء',
     'Processes' => 'العمليات',
     'Add_section' => 'اضافه قسم',

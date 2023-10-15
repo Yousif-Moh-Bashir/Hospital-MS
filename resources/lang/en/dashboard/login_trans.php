@@ -18,7 +18,7 @@ return [
     'log_patient' => 'Log in as a patient',
     'log_admin' => 'Log in as a admin',
     'Email' => 'Email',
-    'Password' => 'Email',
+    'Password' => 'Password',
     'Sign_In' => 'Sign In',
     'Facebook' => 'Signup with Facebook',
     'Twitter' => 'Signup with Twitter',
