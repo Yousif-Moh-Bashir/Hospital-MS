@@ -1,4 +1,7 @@
 @extends('dashboard.layouts.master')
+@section('title')
+{{ trans('dashboard/Services_trans.Services') }}
+@endsection
 @section('css')
 <!-- Internal Data table css -->
 <link href="{{asset('dashboard/plugins/datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
@@ -15,33 +18,11 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">{{ trans('dashboard/sections_trans.Sections') }}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{ trans('dashboard/sections_trans.Show') }}</span>
+							<h4 class="content-title mb-0 my-auto">{{ trans('dashboard/Services_trans.Services') }}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{ trans('dashboard/Services_trans.Show') }}</span>
 						</div>
 					</div>
 					<div class="d-flex my-xl-auto right-content">
-						<div class="pr-1 mb-3 mb-xl-0">
-							<button type="button" class="btn btn-info btn-icon ml-2"><i class="mdi mdi-filter-variant"></i></button>
-						</div>
-						<div class="pr-1 mb-3 mb-xl-0">
-							<button type="button" class="btn btn-danger btn-icon ml-2"><i class="mdi mdi-star"></i></button>
-						</div>
-						<div class="pr-1 mb-3 mb-xl-0">
-							<button type="button" class="btn btn-warning  btn-icon ml-2"><i class="mdi mdi-refresh"></i></button>
-						</div>
-						<div class="mb-3 mb-xl-0">
-							<div class="btn-group dropdown">
-								<button type="button" class="btn btn-primary">14 Aug 2019</button>
-								<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuDate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuDate" data-x-placement="bottom-end">
-									<a class="dropdown-item" href="#">2015</a>
-									<a class="dropdown-item" href="#">2016</a>
-									<a class="dropdown-item" href="#">2017</a>
-									<a class="dropdown-item" href="#">2018</a>
-								</div>
-							</div>
-						</div>
+
 					</div>
 				</div>
 				<!-- breadcrumb -->
@@ -56,7 +37,7 @@
 							<div class="card-header pb-0">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-                                    {{ trans('dashboard/sections_trans.Add_section') }}
+                                    {{ trans('dashboard/Services_trans.Add_Service') }}
                                 </button>
 							</div>
 
@@ -66,26 +47,36 @@
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>{{ trans('dashboard/sections_trans.Name') }}</th>
-												<th>{{ trans('dashboard/sections_trans.Describtion') }}</th>
-												<th>{{ trans('dashboard/sections_trans.Date_created') }}</th>
-												<th>{{ trans('dashboard/sections_trans.Processes') }}</th>
+												<th>{{ trans('dashboard/Services_trans.Name') }}</th>
+												<th>{{ trans('dashboard/Services_trans.Price') }}</th>
+												<th>{{ trans('dashboard/Services_trans.Describtion') }}</th>
+												<th>{{ trans('dashboard/Services_trans.Status') }}</th>
+												<th>{{ trans('dashboard/Services_trans.Date_created') }}</th>
+												<th>{{ trans('dashboard/Services_trans.Processes') }}</th>
 											</tr>
 										</thead>
 										<tbody>
-                                            @foreach ($sections as $index=>$section )
+                                            @foreach ($services as $index=>$service )
                                             <tr>
 												<td>{{ $index + 1 }}</td>
-												<td><a class="btn ripple btn-outline-secondary btn-sm" href="{{ route('doctor.show',$section->id) }}">{{ $section->name }}</a></td>
-												<td>{{ \Str::limit($section->describtion, 50) }}</td>
-												<td>{{ $section->created_at->diffForHumans() }}</td>
+												<td>{{ $service->name }}</td>
+												<td>{{ $service->price }}</td>
+												<td>{{ \Str::limit($service->description, 50) }}</td>
                                                 <td>
-                                                    <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$section->id}}"><i class="las la-pen"></i> {{ trans('dashboard/sections_trans.Edit') }}</a>
-                                                    <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$section->id}}"><i class="las la-trash"></i> {{ trans('dashboard/sections_trans.Delete') }}</a>
+                                                    @if($service->status == 1)
+                                                        <span class="badge badge-success">{{ trans('dashboard/doctors_trans.Enabled') }}</span>
+                                                    @else
+                                                        <span class="badge badge-danger">{{ trans('dashboard/doctors_trans.Not_enabled') }}</span>
+                                                    @endif
+                                                </td>
+												<td>{{ $service->created_at->diffForHumans() }}</td>
+                                                <td>
+                                                    <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$service->id}}"><i class="las la-pen"></i> {{ trans('dashboard/Services_trans.Edit') }}</a>
+                                                    <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$service->id}}"><i class="las la-trash"></i> {{ trans('dashboard/Services_trans.Delete') }}</a>
                                                 </td>
 											</tr>
-                                            @include('dashboard.sections.edit')
-                                            @include('dashboard.sections.delete')
+                                            @include('dashboard.services.edit')
+                                            @include('dashboard.services.delete')
                                             @endforeach
 										</tbody>
 									</table>
@@ -94,7 +85,7 @@
 						</div>
 					</div><!--/div-->
 				</div><!-- row closed -->
-                @include('dashboard.sections.add')
+                @include('dashboard.services.add')
 			</div><!-- Container closed -->
 		</div><!-- main-content closed -->
 @endsection

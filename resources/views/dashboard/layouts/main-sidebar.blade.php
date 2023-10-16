@@ -30,19 +30,32 @@
 
                     <!--------------------------------------------------------------------------------------------->
 
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label">{{ trans('dashboard/main_sidebar.Sections') }}</span><i class="angle fe fe-chevron-down"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="{{ route('section.index') }}">{{ trans('dashboard/main_sidebar.Show_All') }}</a></li>
-						</ul>
-					</li>
+                    <li class="slide">
+                        <a class="side-menu__item" href="{{ route('section.index') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0V0z" fill="none"></path><path d="M5 5h4v4H5zm10 10h4v4h-4zM5 15h4v4H5zM16.66 4.52l-2.83 2.82 2.83 2.83 2.83-2.83z" opacity=".3"></path><path d="M16.66 1.69L11 7.34 16.66 13l5.66-5.66-5.66-5.65zm-2.83 5.65l2.83-2.83 2.83 2.83-2.83 2.83-2.83-2.83zM3 3v8h8V3H3zm6 6H5V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm8-2v8h8v-8h-8zm6 6h-4v-4h4v4z"></path></svg><span class="side-menu__label">{{ trans('dashboard/main_sidebar.Sections') }}</span>
+                            <span class="badge badge-success side-badge">{{ App\Models\Section::count() }}</span>
+                        </a>
+                    </li>
 
 					<li class="slide">
 						<a class="side-menu__item" data-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label">{{ trans('dashboard/main_sidebar.Doctors') }}</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item" href="{{ route('doctor.index') }}">{{ trans('dashboard/main_sidebar.Show_All') }}</a></li>
+							<li>
+                                <a class="slide-item" href="{{ route('doctor.index') }}">{{ trans('dashboard/main_sidebar.Show_All') }}</a>
+                                <span class="badge badge-danger side-badge">{{ App\Models\Doctor::count() }}</span>
+                            </li>
 						</ul>
 					</li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M6.26 9L12 13.47 17.74 9 12 4.53z" opacity=".3"></path><path d="M19.37 12.8l-7.38 5.74-7.37-5.73L3 14.07l9 7 9-7zM12 2L3 9l1.63 1.27L12 16l7.36-5.73L21 9l-9-7zm0 11.47L6.26 9 12 4.53 17.74 9 12 13.47z"></path></svg><span class="side-menu__label">{{ trans('dashboard/Services_trans.Services') }}</span><i class="angle fe fe-chevron-down"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" href="{{ route('service.index') }}">{{ trans('dashboard/Services_trans.Single_Services') }}</a></li>
+                            <li><a class="slide-item" href="#">{{ trans('dashboard/Services_trans.Services_group') }}</a></li>
+                            <li><a class="slide-item" href="#">{{ trans('dashboard/Services_trans.Ambulance') }}</a></li>
+                            <li><a class="slide-item" href="#">{{ trans('dashboard/Services_trans.Ambulance_calls') }}</a></li>
+                        </ul>
+                    </li>
 
 				</ul>
 			</div>

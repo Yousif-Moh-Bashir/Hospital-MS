@@ -12,10 +12,12 @@
             <form action="{{ route('section.store') }}" method="post" autocomplete="off">
                 @csrf
                 <div class="modal-body">
-                    {{-- <label for="exampleInputPassword1">{{trans('dashboard/sections_trans.name_sections')}}</label> --}}
-                    <input type="text" name="name" class="form-control" placeholder="{{ trans('dashboard/sections_trans.Enter_section_name') }}">
-                    <textarea name="describtion" class="form-control" placeholder="{{ trans('dashboard/sections_trans.Enter_section_name') }}" cols="30" rows="10"></textarea>
-
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="{{ trans('dashboard/sections_trans.Enter_section_name') }}">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="describtion" class="form-control" placeholder="{{ trans('dashboard/sections_trans.Enter_section_name') }}" cols="30" rows="10"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">{{ trans('dashboard/sections_trans.Close') }}</button>

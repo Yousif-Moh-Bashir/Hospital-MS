@@ -24,9 +24,10 @@
 				</div>
 				<!-- breadcrumb -->
 @endsection
-@include('dashboard.layouts.messages_alert')
+
 @section('content')
 				<!-- row -->
+                @include('dashboard.layouts.messages_alert')
 				<div class="row row-sm">
 					<div class="col-xl-12">
 						<div class="card">
@@ -35,6 +36,7 @@
                                 <a href="{{ route('doctor.create') }}" class="btn btn-info" role="button" aria-pressed="true"><i class="fa fa-stethoscope"></i> {{ trans('dashboard/doctors_trans.Add_doctor') }}</a>
                                 <button type="button" class="btn btn-danger" id="btn_delete_all"><i class="las la-trash"></i> {{trans('dashboard/doctors_trans.delete_select')}}</button>
 							</div>
+
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table text-md-nowrap" id="example1">

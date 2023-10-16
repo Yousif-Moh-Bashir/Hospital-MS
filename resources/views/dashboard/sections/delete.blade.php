@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{trans('dashboard/sections_trans.Delete_Section')}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{trans('dashboard/sections_trans.Delete_Section')}} - {{ $section->name }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

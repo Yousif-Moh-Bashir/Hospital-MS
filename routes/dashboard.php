@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -49,6 +50,9 @@ Route::group(
             Route::resource('doctor', DoctorController::class );
             Route::post('update_password', [DoctorController::class, 'update_password'])->name('update_password');
             Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
+
+            ####################### SECTIONS ROUTE ##########################
+            Route::resource('service', SingleServiceController::class );
 
         });
 
