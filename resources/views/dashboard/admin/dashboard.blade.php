@@ -55,7 +55,7 @@
 									</div>
 								</div>
 							</div>
-							<span id="compositeline" class="pt-1">5,9,5,6,4,12,18,14,10,15,12,5,8,5,12,5,12,10,16,12</span>
+							<span id="compositeline" class="pt-1"></span>
 						</div>
 					</div>
 					<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
@@ -77,7 +77,7 @@
 									</div>
 								</div>
 							</div>
-							<span id="compositeline2" class="pt-1">3,2,4,6,12,14,8,7,14,16,12,7,8,4,3,2,2,5,6,7</span>
+							<span id="compositeline2" class="pt-1"></span>
 						</div>
 					</div>
 					<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
@@ -99,7 +99,7 @@
 									</div>
 								</div>
 							</div>
-							<span id="compositeline3" class="pt-1">5,10,5,20,22,12,15,18,20,15,8,12,22,5,10,12,22,15,16,10</span>
+							<span id="compositeline3" class="pt-1"></span>
 						</div>
 					</div>
 					<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
@@ -121,7 +121,7 @@
 									</div>
 								</div>
 							</div>
-							<span id="compositeline4" class="pt-1">5,9,5,6,4,12,18,14,10,15,12,5,8,5,12,5,12,10,16,12</span>
+							<span id="compositeline4" class="pt-1"></span>
 						</div>
 					</div>
 				</div>
@@ -141,18 +141,18 @@
 							<div class="card-body">
 								<div class="total-revenue">
 									<div>
-									  <h4>120,750</h4>
-									  <label><span class="bg-primary"></span>success</label>
+                                        <h4>120,750</h4>
+                                        <label><span class="bg-primary"></span>success</label>
 									</div>
 									<div>
-									  <h4>56,108</h4>
-									  <label><span class="bg-danger"></span>Pending</label>
+                                        <h4>56,108</h4>
+                                        <label><span class="bg-danger"></span>Pending</label>
 									</div>
 									<div>
-									  <h4>32,895</h4>
-									  <label><span class="bg-warning"></span>Failed</label>
+                                        <h4>32,895</h4>
+                                        <label><span class="bg-warning"></span>Failed</label>
 									</div>
-								  </div>
+                                </div>
 								<div id="bar" class="sales-bar mt-4"></div>
 							</div>
 						</div>

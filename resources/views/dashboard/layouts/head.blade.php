@@ -1,4 +1,6 @@
 
+@livewireStyles
+
 @if (App::getLocale() == 'ar')
     <!-- Title -->
     <title>@yield('title')</title>
@@ -41,6 +43,14 @@
     <link href="{{asset('dashboard/css/skin-modes.css')}}" rel="stylesheet" />
 @endif
 
+<!-- Internal Data table css -->
+<link href="{{asset('dashboard/plugins/datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
+<link href="{{asset('dashboard/plugins/datatable/css/buttons.bootstrap4.min.css')}}" rel="stylesheet">
+<link href="{{asset('dashboard/plugins/datatable/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" />
+<link href="{{asset('dashboard/plugins/datatable/css/jquery.dataTables.min.css')}}" rel="stylesheet">
+<link href="{{asset('dashboard/plugins/datatable/css/responsive.dataTables.min.css')}}" rel="stylesheet">
+<link href="{{asset('dashboard/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+
 <!---fonts--->
 <link rel="stylesheet" href="{{ asset('dashboard/fonts/font-awesome/css/font-awesome.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dashboard/fonts/feather/iconfont.css') }}">
@@ -53,4 +63,6 @@
 </style>
 
 @yield('css')
+
+
 

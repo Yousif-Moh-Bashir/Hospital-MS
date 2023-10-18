@@ -54,6 +54,9 @@ Route::group(
             ####################### SECTIONS ROUTE ##########################
             Route::resource('service', SingleServiceController::class );
 
+            ############################# GroupServices route ##########################################
+            Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
+            
         });
 
         require __DIR__.'/auth.php';
