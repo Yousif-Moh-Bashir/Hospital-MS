@@ -53,7 +53,7 @@
                             <li><a class="slide-item" href="{{ route('service.index') }}">{{ trans('dashboard/Services_trans.Single_Services') }}</a></li>
                             <li><a class="slide-item" href="{{ route('Add_GroupServices') }}">{{ trans('dashboard/Services_trans.Services_group') }}</a></li>
                             <li><a class="slide-item" href="{{ route('insurance_companies.index') }}">{{ trans('dashboard/Insurance_companies.Insurance_companies') }}</a></li>
-                            <li><a class="slide-item" href="#">{{ trans('dashboard/Services_trans.Ambulance') }}</a></li>
+                            <li><a class="slide-item" href="{{ route('ambulance.index') }}">{{ trans('dashboard/Services_trans.Ambulance') }}</a></li>
                             <li><a class="slide-item" href="#">{{ trans('dashboard/Services_trans.Ambulance_calls') }}</a></li>
                         </ul>
                     </li>

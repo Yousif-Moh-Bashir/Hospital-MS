@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\AmbulanceController;
 use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\Dashboard\InsuranceCompaniesController;
 use App\Http\Controllers\Dashboard\SectionController;
@@ -60,6 +61,9 @@ Route::group(
 
             ############################# Insurance Companies ##########################################
             Route::resource('insurance_companies',InsuranceCompaniesController::class);
+
+            ############################# Ambulance Companies ##########################################
+            Route::resource('ambulance',AmbulanceController::class);
 
 
 
