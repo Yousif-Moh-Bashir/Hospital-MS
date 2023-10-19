@@ -1,11 +1,13 @@
-<div>
+
+
+<div class="card-body">
 
     @if ($ServiceSaved)
-        <div class="alert alert-info">تم حفظ البيانات بنجاح .</div>
+        <div class="alert alert-info">{{ trans('dashboard/GroupServices_trans.saved_successfully') }}</div>
     @endif
 
     @if ($ServiceUpdated)
-        <div class="alert alert-info">تم تحديث البيانات بنجاح .</div>
+        <div class="alert alert-info">{{ trans('dashboard/GroupServices_trans.updated_successfully') }}</div>
     @endif
 
     @if ($show_table)
@@ -14,20 +16,20 @@
         <form wire:submit.prevent="saveGroup" autocomplete="off">
             @csrf
             <div class="form-group">
-                <label>اسم المجموعة</label>
+                <label>{{ trans('dashboard/GroupServices_trans.Group_Name') }}</label>
                 <input wire:model="name_group" type="text" name="name_group" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label>ملاحظات</label>
+                <label>{{ trans('dashboard/GroupServices_trans.Note') }}</label>
                 <textarea wire:model="notes" name="notes" class="form-control" rows="5"></textarea>
             </div>
 
             <div class="card mt-4">
                 <div class="card-header">
                     <div class="col-md-12">
-                        <button class="btn btn-outline-primary"
-                                wire:click.prevent="addService">اضافة خدمة فرعية
+                        <button class="btn btn-outline-primary" wire:click.prevent="addService">
+                            {{ trans('dashboard/GroupServices_trans.Add_single_service') }}
                         </button>
                     </div>
                 </div>
@@ -38,9 +40,9 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr class="table-primary">
-                                <th>اسم الخدمة</th>
-                                <th width="200">العدد</th>
-                                <th width="200">العمليات</th>
+                                <th>{{ trans('dashboard/Services_trans.name_Service') }}</th>
+                                <th width="200">{{ trans('dashboard/GroupServices_trans.number') }}</th>
+                                <th width="200">{{ trans('dashboard/GroupServices_trans.Processes') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -87,17 +89,17 @@
                                         @if($groupItem['is_saved'])
                                             <button class="btn btn-sm btn-primary mr-1"
                                                 wire:click.prevent="editService({{$index}})">
-                                                تعديل
+                                                {{ trans('dashboard/GroupServices_trans.Edit') }}
                                             </button>
                                         @elseif($groupItem['service_id'])
                                             <button class="btn btn-sm btn-success mr-1"
                                                 wire:click.prevent="saveService({{$index}})">
-                                                تاكيد
+                                                {{ trans('dashboard/GroupServices_trans.Submit') }}
                                             </button>
                                         @endif
                                         <button class="btn btn-sm btn-danger mr-1"
                                             wire:click.prevent="removeService({{$index}})">
-                                            حذف
+                                            {{ trans('dashboard/GroupServices_trans.Delete') }}
                                         </button>
                                     </td>
                                 </tr>
@@ -107,33 +109,33 @@
                     </div>
 
 
-                    <div class="col-lg-4 ml-auto text-right">
+                    <div class="col-lg-4 ml-autot">
                         <table class="table pull-right">
                             <tr>
-                                <td style="color: red">الاجمالي</td>
+                                <td style="color: red">{{ trans('dashboard/GroupServices_trans.Total') }}</td>
                                 <td>{{ number_format($subtotal, 2) }}</td>
                             </tr>
 
                             <tr>
-                                <td style="color: red">قيمة الخصم</td>
+                                <td style="color: red">{{ trans('dashboard/GroupServices_trans.discoun_value') }}</td>
                                 <td width="125">
                                     <input type="number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="discount_value" class="form-control w-75 d-inline" wire:model="discount_value">
                                 </td>
                             </tr>
 
                             <tr>
-                                <td style="color: red">نسبة الضريبة</td>
+                                <td style="color: red">{{ trans('dashboard/GroupServices_trans.Tax_rate') }}</td>
                                 <td>
                                     <input type="number" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="taxes" class="form-control w-75 d-inline" min="0" max="100" wire:model="taxes"> %
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: red">الاجمالي مع الضريبة</td>
+                                <td style="color: red">{{ trans('dashboard/GroupServices_trans.Total_with_tax') }}</td>
                                 <td>{{ number_format($total, 2) }}</td>
                             </tr>
                         </table>
                         <br/>
-                        <input class="btn btn-outline-success" type="submit" value="تاكيد البيانات">
+                        <input class="btn btn-outline-success" type="submit" value="{{ trans('dashboard/GroupServices_trans.Confirm_data') }}">
                     </div>
 
                 </div>

@@ -39,4 +39,6 @@ class SectionController extends Controller
     {
         return $this->Sections->destroy($request);
     }
+
+    
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DoctorController;
+use App\Http\Controllers\Dashboard\InsuranceCompaniesController;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Routing\RouteGroup;
@@ -56,7 +57,12 @@ Route::group(
 
             ############################# GroupServices route ##########################################
             Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
-            
+
+            ############################# Insurance Companies ##########################################
+            Route::resource('insurance_companies',InsuranceCompaniesController::class);
+
+
+
         });
 
         require __DIR__.'/auth.php';

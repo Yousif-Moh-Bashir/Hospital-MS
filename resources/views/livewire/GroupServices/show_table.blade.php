@@ -1,19 +1,15 @@
 
 
-{{-- @if ($ServiceDeleted)
-    <div class="alert alert-danger">تم حذف البيانات بنجاح .</div>
-@endif --}}
-
-<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button">اضافة مجموعة خدمات </button><br><br>
+<button class="btn btn-info" wire:click="show_form_add" type="button">{{ trans('dashboard/GroupServices_trans.Add_Service_Group') }}</button><br><br>
 <div class="table-responsive">
-        <table class="table text-md-nowrap" id="example1" data-page-length="50"style="text-align: center">
+    <table class="table text-md-nowrap" id="example1" data-page-length="50"style="text-align: center">
         <thead>
             <tr>
                 <th>#</th>
-                <th>الاسم</th>
-                <th>اجمالي العرض شامل الضريبة</th>
-                <th>الملاحظات</th>
-                <th>العمليات</th>
+                <th>{{ trans('dashboard/sections_trans.Name') }}</th>
+                <th>{{ trans('dashboard/GroupServices_trans.Total_offer_tax') }}</th>
+                <th>{{ trans('dashboard/GroupServices_trans.Note') }}</th>
+                <th>{{ trans('dashboard/doctors_trans.Processes') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -30,5 +26,6 @@
                 </tr>
                 @include('livewire.GroupServices.show_delete_modal')
             @endforeach
+        </tbody>
     </table>
 </div>
