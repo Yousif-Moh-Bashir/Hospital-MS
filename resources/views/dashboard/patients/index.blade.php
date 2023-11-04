@@ -53,7 +53,9 @@
                                             @foreach ($patients as $index=>$patient )
                                             <tr>
 												<td>{{ $index + 1 }}</td>
-												<td>{{ $patient->name }}</td>
+												<td>
+                                                    <a class="btn ripple btn-outline-secondary btn-sm" href="{{ route('Patients.show',$patient->id) }}">{{ $patient->name }}</a>
+                                                </td>
 												<td>{{ $patient->email }}</td>
 												<td>{{ $patient->Date_Birth }}</td>
 												<td>{{ $patient->Phone }}</td>

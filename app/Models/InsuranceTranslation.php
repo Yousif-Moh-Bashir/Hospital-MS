@@ -10,4 +10,5 @@ class InsuranceTranslation extends Model
     use HasFactory;
     protected $fillable = ['name','notes'];
     public $timestamps = false;
+    
 }

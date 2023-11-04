@@ -15,7 +15,7 @@ class SectionFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['المخ والاعصاب','الجراحة','الاطفال','النساء والتوليد','العيون','الباطنة']),
+            'name' => $this->faker->unique()->randomElement(['قسم التخدير','المخ والاعصاب','الجراحة','قسم الطوارئ','الاطفال','النساء والتوليد','العيون','الباطنة','قسم المختبرات الطبية']),
             'describtion' => $this->faker->paragraph,
         ];
     }

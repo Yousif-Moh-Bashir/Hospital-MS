@@ -30,7 +30,7 @@
 							<div class="card-header pb-0">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-                                    {{ trans('dashboard/Services_trans.Add_Service') }}
+                                    <i class="fa fa-database" aria-hidden="true"></i> {{ trans('dashboard/Services_trans.Add_Service') }}
                                 </button>
 							</div>
 

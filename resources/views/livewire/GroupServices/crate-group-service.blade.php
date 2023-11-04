@@ -51,16 +51,14 @@
                                 <tr>
                                     <td>
                                         @if($groupItem['is_saved'])
-                                            <input type="hidden" name="GroupsItems[{{$index}}][service_id]"
-                                                wire:model="GroupsItems.{{$index}}.service_id"/>
+                                            <input type="hidden" name="GroupsItems[{{$index}}][service_id]" wire:model="GroupsItems.{{$index}}.service_id"/>
                                             @if($groupItem['service_name'] && $groupItem['service_price'])
                                                 {{ $groupItem['service_name'] }}
                                                 ({{ number_format($groupItem['service_price'], 2) }})
                                             @endif
                                         @else
                                             <select name="GroupsItems[{{$index}}][service_id]"
-                                                    class="form-control{{ $errors->has('GroupsItems.' . $index) ? ' is-invalid' : '' }}"
-                                                    wire:model="GroupsItems.{{$index}}.service_id">
+                                                    class="form-control{{ $errors->has('GroupsItems.' . $index) ? ' is-invalid' : '' }}" wire:model="GroupsItems.{{$index}}.service_id">
                                                 <option value="">-- {{ trans('dashboard/Services_trans.Select') }} --</option>
                                                 @foreach ($allServices as $service)
                                                     <option value="{{ $service->id }}">

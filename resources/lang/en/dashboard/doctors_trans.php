@@ -42,5 +42,6 @@ return [
     'photo' => 'Photo',
     'delete_select' => 'Delete Select',
     'Select' => 'Select',
+    'Doctors_data' => 'Doctors data',
     'Warning' => 'Are you sure you want to delete ?',
 ];

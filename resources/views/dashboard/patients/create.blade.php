@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-3">
                             <label>{{ trans('dashboard/doctors_trans.Phone') }}</label>
-                            <input type="number" name="Phone"  value="{{old('Phone')}}" class="form-control @error('Phone') is-invalid @enderror" required>
+                            <input type="text" name="Phone"  value="{{old('Phone')}}" class="form-control @error('Phone') is-invalid @enderror" required>
                         </div>
 
                         <div class="col">

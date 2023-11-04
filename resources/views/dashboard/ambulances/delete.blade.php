@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('insurance_companies.destroy', 'test') }}" method="post">
+            <form action="{{ route('ambulance.destroy', 'delete') }}" method="post">
                 {{ method_field('delete') }}
                 {{ csrf_field() }}
             <div class="modal-body">

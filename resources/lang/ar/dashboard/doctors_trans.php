@@ -42,6 +42,7 @@ return [
     'name_doctors' => 'اسم الطبيب',
     'delete_select' => 'حذف المحدد',
     'Select' => 'اختر',
+    'Doctors_data' => 'بيانات الطبيب',
     'Warning' => 'هل انت متأكد من انك تريد الحذف ؟',
 
 ];

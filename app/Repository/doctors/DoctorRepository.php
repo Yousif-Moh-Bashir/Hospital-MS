@@ -48,7 +48,6 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctors->save();
             // store trans
             $doctors->name = $request->name;
-            // $doctors->appointments =implode(",",$request->appointments);
             $doctors->save();
             //RELATIONS
             $doctors->DoctorAppioment()->attach($request->appointments);
@@ -94,7 +93,6 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctors->update();
             // store trans
             $doctors->name = $request->name;
-            // $doctors->appointments =implode(",",$request->appointments);
             $doctors->update();
             //RELATIONS
             $doctors->DoctorAppioment()->sync($request->appointments);

@@ -57,7 +57,7 @@
 <!---fonts--->
 <link rel="stylesheet" href="{{ asset('dashboard/fonts/Cairo/stylesheet.css') }}">
 <style>
-    body, h1, h2, h3, h4, h5, h6, .main-logo1, .fab ,.badge {
+    body, h1, h2, h3, h4, h5, h6, .main-logo1, .fab ,.badge ,.invoice-content {
         font-family: 'Cairo';
     }
 </style>

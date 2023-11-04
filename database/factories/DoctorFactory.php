@@ -21,7 +21,7 @@ class DoctorFactory extends Factory
             'section_id' => Section::all()->random()->id,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'phone' => $this->faker->phoneNumber,
-            'price' => $this->faker->randomElement([100,200,300,400,500]),
+            'price' => $this->faker->numberBetween(100,1000),
         ];
     }
 }

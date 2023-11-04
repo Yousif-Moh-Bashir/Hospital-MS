@@ -42,7 +42,7 @@
 						<ul class="slide-menu">
 							<li>
                                 <a class="slide-item" href="{{ route('doctor.index') }}">{{ trans('dashboard/main_sidebar.Show_All') }}</a>
-                                <span class="badge badge-danger side-badge">{{ App\Models\Doctor::count() }}</span>
+                                <span class="badge badge-warning side-badge">{{ App\Models\Doctor::count() }}</span>
                             </li>
 						</ul>
 					</li>
@@ -61,10 +61,25 @@
                     <li class="slide">
                         <a class="side-menu__item" data-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M4 12c0 4.08 3.06 7.44 7 7.93V4.07C7.05 4.56 4 7.92 4 12z" opacity=".3"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.05-7.44 7-7.93v15.86zm2-15.86c1.03.13 2 .45 2.87.93H13v-.93zM13 7h5.24c.25.31.48.65.68 1H13V7zm0 3h6.74c.08.33.15.66.19 1H13v-1zm0 9.93V19h2.87c-.87.48-1.84.8-2.87.93zM18.24 17H13v-1h5.92c-.2.35-.43.69-.68 1zm1.5-3H13v-1h6.93c-.04.34-.11.67-.19 1z"></path></svg><span class="side-menu__label">{{ trans('dashboard/Patient.Patients') }}</span><i class="angle fe fe-chevron-down"></i></a>
                         <ul class="slide-menu">
-                            <li><a class="slide-item" href="{{ route('Patients.index') }}">{{ trans('dashboard/Patient.Patient_list') }}</a></li>
-                            <li><a class="slide-item" href="darggablecards.html">Darggablecards</a></li>
-                            <li><a class="slide-item" href="rangeslider.html">Range-slider</a></li>
-                            <li><a class="slide-item" href="calendar.html">Calendar</a></li>
+                            <li>
+                                <a class="slide-item" href="{{ route('Patients.index') }}">{{ trans('dashboard/Patient.Patient_list') }}</a>
+                                <span class="badge badge-info side-badge">{{ App\Models\Patient::count() }}</span>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M13 4H6v16h12V9h-5V4zm3 14H8v-2h8v2zm0-6v2H8v-2h8z" opacity=".3"></path><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"></path></svg><span class="side-menu__label">{{ trans('dashboard/Invoices.Invoices') }}</span><i class="angle fe fe-chevron-down"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" href="{{ route('single_invoices') }}">{{ trans('dashboard/Invoices.Single_Service_Bill') }}</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M13 4H6v16h12V9h-5V4zm3 14H8v-2h8v2zm0-6v2H8v-2h8z" opacity=".3"></path><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"></path></svg><span class="side-menu__label">{{ trans('dashboard/Receipt.Accounts') }}</span><i class="angle fe fe-chevron-down"></i></a>
+                        <ul class="slide-menu">
+                            <li><a class="slide-item" href="{{ route('Receipt.index') }}">{{ trans('dashboard/Receipt.Catch_Receipt') }}</a></li>
+                            <li><a class="slide-item" href="{{ route('Payment.index') }}">{{ trans('dashboard/Payment.Catch_Payment') }}</a></li>
                         </ul>
                     </li>
 

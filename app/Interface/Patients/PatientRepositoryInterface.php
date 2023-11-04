@@ -8,6 +8,8 @@ interface PatientRepositoryInterface
 
     public function create();
 
+    public function show($id);
+
     public function store($request);
 
     public function edit($id);
