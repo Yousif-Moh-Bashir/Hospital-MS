@@ -47,8 +47,9 @@
                                                     <select id="sectionChooser" name="somename" class="form-control SlectBox SumoUnder" onclick="console.log($(this).val())" onchange="console.log('change is firing')" tabindex="-1">
                                                         <!--placeholder-->
                                                         <option selected disabled>-- {{ trans('dashboard/login_trans.choose') }} --</option>
-                                                        <option value="user">{{ trans('dashboard/login_trans.log_patient') }}</option>
                                                         <option value="admin">{{ trans('dashboard/login_trans.log_admin') }}</option>
+                                                        <option value="doctor">{{ trans('dashboard/login_trans.log_doctor') }}</option>
+                                                        <option value="user">{{ trans('dashboard/login_trans.log_patient') }}</option>
                                                     </select>
                                                 </div>
 
@@ -86,6 +87,38 @@
 
                                                 <div class="panel" id="admin">
                                                     <form action="{{ route('login.admin') }}" method="POST">
+                                                        @csrf
+                                                        <div class="form-group">
+                                                            <label>{{ trans('dashboard/login_trans.Email') }}</label>
+                                                            <input class="form-control" placeholder="Enter your email" type="email" name="email" autofocus>
+                                                            @error('email')
+                                                                <span class="text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>{{ trans('dashboard/login_trans.Password') }}</label>
+                                                            <input class="form-control" placeholder="Enter your password" type="password" name="password" autofocus>
+                                                            @error('password')
+                                                                <span class="text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div><button class="btn btn-main-primary btn-block">{{ trans('dashboard/login_trans.Sign_In') }}</button>
+                                                        <div class="row row-xs">
+                                                            <div class="col-sm-6">
+                                                                <button class="btn btn-block"><i class="fa fa-facebook"></i> {{ trans('dashboard/login_trans.Facebook') }}</button>
+                                                            </div>
+                                                            <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                                                                <button class="btn btn-info btn-block"><i class="fa fa-twitter"></i> {{ trans('dashboard/login_trans.Twitter') }}</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <div class="main-signin-footer mt-5">
+                                                        <p><a href="">{{ trans('dashboard/login_trans.Forgot_password') }}</a></p>
+                                                        <p>{{ trans('dashboard/login_trans.Dont_have') }} <a href="{{ url('/' . $page='signup') }}">{{ trans('dashboard/login_trans.Create_Account') }}</a></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel" id="doctor">
+                                                    <form action="{{ route('login.doctor') }}" method="POST">
                                                         @csrf
                                                         <div class="form-group">
                                                             <label>{{ trans('dashboard/login_trans.Email') }}</label>

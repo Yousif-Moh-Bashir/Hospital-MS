@@ -8,7 +8,6 @@ use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use App\Http\Controllers\Dashboard\ReceiptController;
 use App\Http\Controllers\Dashboard\PaymentController;
-use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -43,6 +42,11 @@ Route::group(
         Route::get('dashboard/admin', function () {
             return view('dashboard.admin.dashboard');
         })->middleware(['auth:admin'])->name('dashboard.admin');
+
+        ####################### DOCTOR ROUTE ##########################
+        Route::get('dashboard/doctor', function () {
+            return view('dashboard.doctors.dashboard');
+        })->middleware(['auth:doctor'])->name('dashboard.doctor');
 
 /*---------------------------------------------------------------------------------*/
 
@@ -79,13 +83,16 @@ Route::group(
             Route::resource('Receipt', ReceiptController::class);
 
             ############################# Payment route ##########################################
-
             Route::resource('Payment', PaymentController::class);
 
+            ############################# group invoices ##########################################
+            Route::view('group_invoices','livewire.Group_invoices.index')->name('group_invoices');
+            Route::view('group_Print_invoices','livewire.Group_invoices.print')->name('group_Print_invoices');
 
-        });
 
-        require __DIR__.'/auth.php';
+        });//END OF auth:admin
+
+        require __DIR__.'/auth.php'; //AUTH ROUTES
 
     });
 

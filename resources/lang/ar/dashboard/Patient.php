@@ -15,6 +15,7 @@ return [
 
     'Patient' => 'مريض',
     'Patients' => 'المرضى',
+    'Patient_Information' => 'معلومات المريض',
     'Patient_list' => 'قائمة المرضى',
     'Add_Patient' => 'اضافه مريض',
     'Delete_Patient' => 'حذف مريض',
@@ -38,5 +39,13 @@ return [
     'Status' => 'الحاله',
     'Owned' => 'مملوكة',
     'rent' => 'ايجار',
+    'Payments'=> 'المدفوعات',
+    'account_statement'=> 'كشف حساب',
+    'X-rays'=> 'الاشعه',
+    'Laboratory'=> 'المختبر',
+    'description'=> 'الوصف',
+    'Debit'=> 'مدين',
+    'Credit'=> 'دائن',
+    'final_balance'=> 'الرصيد النهائي',
 
 ];

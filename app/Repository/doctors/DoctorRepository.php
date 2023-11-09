@@ -81,8 +81,8 @@ class DoctorRepository implements DoctorRepositoryInterface
     {
         DB::beginTransaction();
 
-        try {
-
+        try
+        {
             $doctors = Doctor::findOrFail($id);
             $doctors->email = $request->email;
             $doctors->password = Hash::make($request->password);
@@ -100,9 +100,10 @@ class DoctorRepository implements DoctorRepositoryInterface
             // update photo
             if ($request->has('photo'))
             {
-            // Delete old photo
-                if ($doctors->photo){
-                    $old_img = $doctors->photo->filename;
+                // Delete old photo
+                if ($doctors->image)
+                {
+                    $old_img = $doctors->image->filename;
                     $this->Delete_attachment('upload_image','doctors/'.$old_img,$id);
                 }
                 //Upload img
@@ -111,7 +112,6 @@ class DoctorRepository implements DoctorRepositoryInterface
             DB::commit();
             session()->flash('edit');
             return redirect()->route('doctor.index');
-
         }
         catch (\Exception $e) {
             DB::rollback();

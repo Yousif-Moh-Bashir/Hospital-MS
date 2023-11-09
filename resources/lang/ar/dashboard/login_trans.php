@@ -25,6 +25,7 @@ return [
     'Forgot_password' => 'نسيت كلمه المرور ؟',
     'Create_Account' => 'إنشاء حساب',
     'Dont_have' => 'ليس لديك حساب ؟',
+    'log_doctor'=> 'دخول كطبيب',
 
 
 ];

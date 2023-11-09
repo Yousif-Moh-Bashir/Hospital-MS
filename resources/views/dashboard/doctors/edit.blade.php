@@ -61,7 +61,7 @@
                                         {{ trans('dashboard/login_trans.Password') }}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <input class="form-control" name="password" type="password">
+                                    <input class="form-control" name="password" type="password" value="{{ old('password',$doctor->password) }}">
                                 </div>
                             </div>
 
@@ -90,7 +90,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-
                             </div>
 
                             <div class="row row-xs align-items-center mg-b-20">
@@ -119,9 +118,7 @@
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <input class="form-control" name="price" type="text" value="{{ old('price',$doctor->price) }}">
                                 </div>
-
                             </div>
-
 
 
                             <div class="row row-xs align-items-center mg-b-20">

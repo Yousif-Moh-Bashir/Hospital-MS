@@ -15,6 +15,7 @@ return [
 
     'Invoices' => 'Invoices',
     'Single_Service_Bill' => 'Single Service Bill',
+    'Group_Service_Bill'=> 'Group Service Bill',
     'Add_new_invoice' => 'Add New Invoice',
     'Delete_Delete_Invoices' => 'Delete Delete_Invoices',
     'company_code' => 'Company Code',

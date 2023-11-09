@@ -15,6 +15,7 @@ return [
 
     'Patient' => 'Patient',
     'Patients' => 'Patients',
+    'Patient_Information' => 'Patient Information',
     'Patient_list' => 'Patient List',
     'Add_Patient' => 'Add Patient',
     'Delete_Patient' => 'Delete Patient',
@@ -36,5 +37,13 @@ return [
     'Status' => 'Status',
     'Owned' => 'Owned',
     'rent' => 'Rent',
+    'Payments'=> 'Payments',
+    'account_statement'=> 'Account Statement',
+    'X-rays'=> 'X-rays',
+    'Laboratory'=> 'Laboratory',
+    'description'=> 'Description',
+    'Debit'=> 'Debit',
+    'Credit'=> 'Credit',
+    'final_balance'=> 'Final Balance',
 
 ];

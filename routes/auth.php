@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AdminController;
+use App\Http\Controllers\Auth\DoctorController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -32,10 +33,12 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.update');
     ############################################################################### -- ADMIN
-
     Route::post('admin/login', [AdminController::class, 'store'])->name('login.admin');
 
-});
+    ############################################################################### -- DOCTOR
+    Route::post('doctor/login', [DoctorController::class, 'store'])->name('login.doctor');
+
+});//End Route Guest
 
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
@@ -59,3 +62,6 @@ Route::middleware('auth')->group(function () {
 });
     ############################################################################### -- ADMIN
     Route::post('admin/logout', [AdminController::class, 'destroy']) ->middleware('auth:admin')->name('logout.admin');
+
+    ############################################################################### -- DOCTOR
+    Route::post('doctor/logout', [DoctorController::class, 'destroy']) ->middleware('auth:doctor')->name('logout.doctor');

@@ -117,7 +117,7 @@
                                 </div>
 
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <input class="form-control" name="price" value="0.00" type="text">
+                                    <input class="form-control" name="price" placeholder="0.00" type="text">
                                 </div>
 
                             </div>

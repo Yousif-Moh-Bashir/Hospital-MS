@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSingleInvoicesTable extends Migration
+class CreateInvoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,22 @@ class CreateSingleInvoicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('single_invoices', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->integer('invoice_type')->comment('1-single invoce | 2-group invoices');
             $table->date('invoice_date');
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->foreignId('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
             $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
-            $table->foreignId('Service_id')->references('id')->on('Services')->onDelete('cascade');
+            $table->foreignId('Group_id')->nullable()->references('id')->on('groups')->onDelete('cascade');
+            $table->foreignId('Service_id')->nullable()->references('id')->on('services')->onDelete('cascade');
             $table->double('price', 8, 2)->default(0);
             $table->double('discount_value', 8, 2)->default(0);
             $table->string('tax_rate');
             $table->string('tax_value');
             $table->double('total_with_tax', 8, 2)->default(0);
             $table->integer('type')->default(1);
+            $table->integer('invoice_status')->comment('1-NAGDY | 2-AQEEL')->default(1);
             $table->timestamps();
         });
     }
@@ -37,6 +40,6 @@ class CreateSingleInvoicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('single_invoices');
+        Schema::dropIfExists('invoices');
     }
 }

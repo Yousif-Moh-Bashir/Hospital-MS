@@ -17,6 +17,7 @@ return [
     'choose' => 'choose',
     'log_patient' => 'Log in as a patient',
     'log_admin' => 'Log in as a admin',
+    'log_doctor' => 'Log in as a doctor',
     'Email' => 'Email',
     'Password' => 'Password',
     'Sign_In' => 'Sign In',

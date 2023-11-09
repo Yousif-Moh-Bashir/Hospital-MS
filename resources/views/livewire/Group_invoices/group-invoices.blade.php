@@ -1,6 +1,5 @@
-
 <div class="card-body">
-    
+
     @if ($catchError)
         <div class="alert alert-danger" id="success-danger">
             <button type="button" class="close" data-dismiss="alert">x</button>
@@ -17,7 +16,7 @@
     @endif
 
     @if($show_table)
-        @include('livewire.single_invoices.show_table')
+        @include('livewire.Group_invoices.show_table')
     @else
         <form wire:submit.prevent="store" autocomplete="off">
             @csrf
@@ -87,10 +86,10 @@
                                     <tr>
                                         <th scope="row">1</th>
                                         <td>
-                                            <select wire:model="Service_id" class="form-control" wire:change="get_price" id="exampleFormControlSelect1">
+                                            <select wire:model="Group_id" class="form-control" wire:change="get_price" id="exampleFormControlSelect1">
                                                 <option value="">-- {{ trans('dashboard/login_trans.choose') }} --</option>
-                                                @foreach($Services as $Service)
-                                                    <option value="{{$Service->id}}">{{$Service->name}}</option>
+                                                @foreach($Groups as $Group)
+                                                    <option value="{{$Group->id}}">{{$Group->name}}</option>
                                                 @endforeach
                                             </select>
                                         </td>
@@ -113,4 +112,3 @@
     @endif
 
 </div>
-

@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SingleInvoicesModel extends Model
+class Invoice extends Model
 {
     use HasFactory;
+    protected $fillable = ['id','invoice_type','invoice_date','patient_id','doctor_id','section_id','Group_id','Service_id','price','discount_value','tax_rate','tax_value','total_with_tax','type','invoice_status','created_at','updated_at'];
 
-    protected $table = 'single_invoices';
-    protected $fillable = ['id','invoice_date','patient_id','doctor_id','section_id','Service_id','price','discount_value','tax_rate','tax_value','total_with_tax','type','created_at','updated_at'];
+    public function Group()
+    {
+        return $this->belongsTo(Group::class,'Group_id');
+    }
 
     public function Service()
     {
@@ -31,4 +34,6 @@ class SingleInvoicesModel extends Model
     {
         return $this->belongsTo(Section::class,'section_id');
     }
-}
+
+
+}//end of model

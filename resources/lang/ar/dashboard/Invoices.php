@@ -15,6 +15,7 @@ return [
 
     'Invoices' => 'الفواتير',
     'Single_Service_Bill' => 'فاتوره خدمه مفرده',
+    'Group_Service_Bill'=> 'فاتورة مجموعة خدمات',
     'Add_new_invoice' => 'اضافة فاتوره جديدة',
     'Delete_Invoices' => 'حذف فاتوره',
     'company_code' => 'كود الشركة',
