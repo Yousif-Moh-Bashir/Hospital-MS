@@ -12,5 +12,5 @@ class Service extends Model
 
     use Translatable;
     public $translatedAttributes = ['name','description'];
-    public $fillable= ['name','price','description','status'];
+    public $fillable= ['name','description','price','status'];
 }

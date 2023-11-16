@@ -44,4 +44,6 @@ return [
     'Select' => 'Select',
     'Doctors_data' => 'Doctors data',
     'Warning' => 'Are you sure you want to delete ?',
+    'Statements'=> 'Statements',
+    
 ];

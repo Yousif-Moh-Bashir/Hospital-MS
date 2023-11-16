@@ -43,23 +43,18 @@ Route::group(
             return view('dashboard.admin.dashboard');
         })->middleware(['auth:admin'])->name('dashboard.admin');
 
-        ####################### DOCTOR ROUTE ##########################
-        Route::get('dashboard/doctor', function () {
-            return view('dashboard.doctors.dashboard');
-        })->middleware(['auth:doctor'])->name('dashboard.doctor');
-
 /*---------------------------------------------------------------------------------*/
 
-        Route::middleware(['auth:admin'])->group(function () {
+        Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
 
             ####################### SECTIONS ROUTE ##########################
             Route::resource('section', SectionController::class );
 
-            ####################### SECTIONS DOCTOR ##########################
+            ####################### DOCTOR ROUTE ##########################
             Route::resource('doctor', DoctorController::class );
             Route::post('update_password', [DoctorController::class, 'update_password'])->name('update_password');
             Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
-
+            
             ####################### SECTIONS ROUTE ##########################
             Route::resource('service', SingleServiceController::class );
 
